@@ -85,12 +85,19 @@ const carMap = inventory.filter(i => i['id'] === 33);
 console.log('Year: ' + carYear + ' Make: ' + carMake);
 
 // Stretch goal array.filter()
-console.log('Year: ' + carMap[0].car_year + ' Make: ' + carMap[0].car_make);
+console.log('Stretch Goal array.filter() Year: ' + carMap[0].car_year + ' Make: ' + carMap[0].car_make);
 
 // ==== Challenge 2 ====
 // The dealer needs the information on the last car in their inventory.  What is the make and model of the last car in the inventory?  Log the make and model into the console.
 let lastCar = 0;
+
+// Stretch Goal array.reduce().  Notice the reduce doesn't really do anything, don't need to, it automatically returns the last result, it is not comparing anything so it just returns the last item
+var lastCarReduce = inventory.reduce((arr, node) => node);
+
 console.log('Car Make: ' + inventory[inventory.length - 1].car_make + ' Car Model: ' + inventory[inventory.length - 1].car_model);
+
+// Stretch Goal array.reduce()
+console.log('Stretch goal array.reduce() Car Make: ' + lastCarReduce.car_make + ' Car Model: ' + lastCarReduce.car_model);
 
 // ==== Challenge 3 ====
 // The marketing team wants the car models listed alphabetically on the website. Sort all the car model names into alphabetical order and log the results in the console
@@ -110,9 +117,15 @@ let carYears = [];
 for(i = 0; i < inventory.length; i++)
 	{
 		carYears.push(inventory[i].car_year);
-	}	
+	}
+
+	// Stretch goal array.map()
+	carYearMap = inventory.map(car => car.car_year);
 
 	console.log(carYears);
+
+// Stretch goal array.map()
+console.log('Stretch Goal array.map() ' + carYearMap);
 
 // ==== Challenge 5 ====
 // The car lot manager needs to find out how many cars are older than the year 2000. Using the carYears array you just created, find out how many cars were made before the year 2000 by populating the array oldCars and logging it's length.
@@ -126,13 +139,7 @@ for(let i = 0; i < carYears.length; i++)
 			}
 	}
 
-// Stretch goal array.filter()
-const carOldMap = inventory.filter(i => i['car_year'] < 2000);
-
 console.log('# of cars: ' + oldCars.length + ' Year: ' + oldCars); 
-
-// Stretch goal array.filter()
-console.log('# of cars: ' + carOldMap.length + ' Make: ' + carOldMap);
 
 
 // ==== Challenge 6 ====
@@ -145,7 +152,16 @@ for(i = 0; i < inventory.length; i++)
 				BMWAndAudi.push(inventory[i]);
 			}
 	}
+
+// Stretch goal array.filter()
+const carBmwMap = inventory.filter(i => i['car_make'] === 'BMW');
+const carAudiMap = inventory.filter(i => i['car_make'] === 'Audi');
+
 console.log(JSON.stringify(BMWAndAudi));
+
+// Stretch goal array.filter()
+console.log('Stretch Goal array.filter(): ' + JSON.stringify(carBmwMap));
+console.log('Stretch Goal array.filter(): ' + JSON.stringify(carAudiMap));
 
 
 

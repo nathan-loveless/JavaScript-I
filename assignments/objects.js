@@ -31,7 +31,9 @@ const kennan =
 		  id: 2, 
 		  name: 'Kennan', 
 		  email: 'kdiben1@tinypic.com', 
-		  gender: 'M' 
+		  gender: 'M',
+		  
+		  speak() { return 'Hello, my name is ' + this.name; }
 	  };	
 
 const keven = 
