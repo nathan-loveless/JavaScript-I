@@ -75,9 +75,17 @@ for(let i = 0; i < inventory.length; i++)
 				carMake = inventory[i].car_make;
 			}
 	}
+
+
+// Stretch goal array.filter()
+const carMap = inventory.filter(i => i['id'] === 33);
+
 	
 
 console.log('Year: ' + carYear + ' Make: ' + carMake);
+
+// Stretch goal array.filter()
+console.log('Year: ' + carMap[0].car_year + ' Make: ' + carMap[0].car_make);
 
 // ==== Challenge 2 ====
 // The dealer needs the information on the last car in their inventory.  What is the make and model of the last car in the inventory?  Log the make and model into the console.
@@ -118,7 +126,14 @@ for(let i = 0; i < carYears.length; i++)
 			}
 	}
 
+// Stretch goal array.filter()
+const carOldMap = inventory.filter(i => i['car_year'] < 2000);
+
 console.log('# of cars: ' + oldCars.length + ' Year: ' + oldCars); 
+
+// Stretch goal array.filter()
+console.log('# of cars: ' + carOldMap.length + ' Make: ' + carOldMap);
+
 
 // ==== Challenge 6 ====
 // A buyer is interested in seeing only BMW and Audi cars within the inventory.  Return an array that only contains BMW and Audi cars.  Once you have populated the BMWAndAudi array, use JSON.stringify() to show the results of the array in the console.
